@@ -2,8 +2,8 @@
 Documentation     Suite de testes do site da Amazon com Gherkin
 Resource          amazon_gherkin_resources.robot  
 
-Test Setup        Abrir o navegador na home da Amazon
-Test Teardown     Fechar o navegador
+Suite Setup        Abrir o navegador na home da Amazon
+Suite Teardown     Fechar o navegador
 
 
 ***Test Cases ***
@@ -21,7 +21,7 @@ Caso de Teste 01 - Acesso ao menu "Eletronicos"
 
 
  Caso de Teste 02 - Pesquisa de Produto
-      [Documentation]     Esse teste verifica a busca de produto
+      [Documentation]     Esse teste verifica a busca de produto a adição e remoção de um produto no carrinho de compras.
       [Tags]              busca_produtos lista_busca
 
     Dado que estou na home page da Amazon.com.br
@@ -29,3 +29,11 @@ Caso de Teste 01 - Acesso ao menu "Eletronicos"
     Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
     um produto da linha "Xbox Series S" deve ser mostrado na página
     
+Caso de Teste 03 - Remover Produto do Carrinho
+    [Documentation]    Esse teste verifica a adição e remoção de um produto no carrinho de compras.
+    [Tags]             carrinho
+
+    E Adicionar o produto "Console Xbox Series S" no carrinho
+    E Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+    E Remover o produto "Console Xbox Series S" do carrinho
+    E Verificar se o carrinho fica vazio
